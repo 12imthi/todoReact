@@ -95,6 +95,7 @@ function App() {
   return (
     <div className="container">
       <div className='row'>
+      <h1 className='text-center bg-secondary text-danger fw-bold'>Todo-task</h1>
         <div className='col-lg-12 col-md-12 col-sm-12'>
           <InputForm onSubmit={handleSubmit} />
         </div>
