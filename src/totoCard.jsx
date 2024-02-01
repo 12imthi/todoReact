@@ -25,7 +25,7 @@ function TotoCard({ id, name, description, onEdit, onDelete, onStatus, status })
 
     const handleStatus = (event) => {
         console.log('New status value:', event.target.value);
-        const newStatus = event.target.value === 'Complete';
+        const newStatus = event.target.value
         onStatus(id, newStatus);
     };
 
@@ -65,7 +65,7 @@ function TotoCard({ id, name, description, onEdit, onDelete, onStatus, status })
 
                     <div className='row'>
                         <label className="col-form-label">Status </label>
-                        <select value={status ? 'Complete' : 'Not Complete'} onChange={handleStatus} className="form-select mb-2">
+                        <select value={status} onChange={handleStatus} className="form-select mb-2">
                             <option value="Complete">Complete</option>
                             <option value="Not Complete">Not Complete</option>
                         </select>

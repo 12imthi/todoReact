@@ -11,17 +11,17 @@ function App() {
     return storedList ? JSON.parse(storedList) : [];
   });
   const [statusFilter, setStatusFilter] = useState("All");
-//  const[err,seterr] = useState('please write something')
- 
+  //  const[err,seterr] = useState('please write something')
 
-useEffect(() => {
-  localStorage.setItem('todoList', JSON.stringify(todoList));
-}, [todoList]);
+
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+  }, [todoList]);
   // console.log('todolist : ',todoList);
   const handleSubmit = ({ name, description }) => {
     if (name === '' || description === '') {
       console.log('plaese enter');
-    //  seterr(err)
+      //  seterr(err)
     }
     else {
 
@@ -30,7 +30,7 @@ useEffect(() => {
         id: newCardId,
         name: name,
         description: description,
-        status: statusFilter === 'Complete'
+        status: 'Complete'
       };
 
       // console.log("Current todoList:", todoList);
@@ -48,7 +48,6 @@ useEffect(() => {
           ...todoid,
           name: newName,
           description: newDescription,
-          status: statusFilter === 'Complete'
         };
       }
       return todoid;
@@ -68,17 +67,17 @@ useEffect(() => {
     console.log("New status:", newStatus);
 
     const updatedTodoList = todoList.map(todo => {
-        if (todo.id === id) {
-            return {
-                ...todo,
-                status: newStatus === 'Complete' ? 'Complete' : 'Not Complete'
-            };
-        }
-        return todo;
+      if (todo.id === id) {
+        return {
+          ...todo,
+          status: newStatus === 'Complete' ? 'Complete' : 'Not Complete'
+        };
+      }
+      return todo;
     });
     console.log("Updated todo list:", updatedTodoList);
     setTodoList(updatedTodoList);
-}
+  }
 
 
 
@@ -87,14 +86,11 @@ useEffect(() => {
   };
 
   const filteredTodoList = todoList.filter(todo => {
-    if (statusFilter === "All") {
-      return true;
-    } else if (statusFilter === "Complete") {
-      return todo.status;
-    } else {
-      return !todo.status;
-    }
+    if(statusFilter === 'All') return true;
+    return todo.status === statusFilter
   });
+
+  console.log(filteredTodoList);
 
   return (
     <div className="container">
