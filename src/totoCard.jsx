@@ -58,13 +58,13 @@ function TotoCard({ id, name, description, onEdit, onDelete, onStatus, status })
                         </>
                     ) : (
                         <>
-                            <h5 className="card-title"> <span className='text-info'>Name:</span> {name} </h5>
-                            <p className="card-text"> <span className='text-info'>Description:</span> {description} </p>
+                            <h5 className="card-title"> <span className='text-light fw-bold'>Name:</span> {name} </h5>
+                            <p className="card-text"> <span className='text-light fw-bolder'>Description:</span> {description} </p>
                         </>
                     )}
 
                     <div className='row'>
-                        <label className="col-form-label">Status </label>
+                        <label className="col-form-label fw-bold">Status </label>
                         <select value={status} onChange={handleStatus} className="form-select mb-2">
                             <option value="Complete">Complete</option>
                             <option value="Not Complete">Not Complete</option>

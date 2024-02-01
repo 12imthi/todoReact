@@ -18,13 +18,13 @@ function InputForm({ onSubmit }) {
     const handleClick = () => {
 
         onSubmit({ name, description });
-        // console.log({ name, description });
+        console.log({ name, description });
         setName('');
         setDescription('');
     };
 
     return (
-        <div className='p-3 mb-2 bg-secondary text-white d-flex justify-content-evenly align-items-center'>
+        <div className='p-3 mt-4 mb-4 bg-secondary text-white d-flex justify-content-evenly align-items-center'>
             <div className='col-lg-4 col-md-4 col-sm-12'>
                 <input type='text' className='form-control' placeholder='ToDo Name' value={name} onChange={handleNameChange} required />
             </div>

@@ -103,7 +103,7 @@ function App() {
         </div> */}
         <div className='col-lg-12 col-md-6 col-sm-12 d-flex justify-content-end'>
           <div className='p-3 mb-2 bg-secondary text-white d-flex justify-content-between align-items-center'>
-            <label className='text-danger me-2'>Filter:</label>
+            <label className='text-danger me-2 fw-bold'>Filter:</label>
             <select className='form-select' value={statusFilter} onChange={handleStatusFilterChange}>
               <option value="All">All</option>
               <option value="Complete">Completed</option>
